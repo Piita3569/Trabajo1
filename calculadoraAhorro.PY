@@ -53,7 +53,7 @@ def menu():
             elif opcion == 4:
                 eliminar_ingreso_o_gasto()
             elif opcion == 5:
-                print("👋 ¡Gracias por usar la calculadora!")
+                print("¡Gracias por usar la calculadora!")
                 break
             else:
                 print("Opción fuera de rango. Debe ser un número del 1 al 5.")
