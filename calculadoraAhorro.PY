@@ -17,7 +17,7 @@ def registrar_ingreso():
         return
 
     ingresos.append({"nombre": nombre, "monto": monto})
-    print(f"Ingreso '{nombre}' por ${monto:.2f} registrado correctamente.")
+    print(f"Ingreso '{nombre}' por ${monto} registrado correctamente.")
 
 # Función a completar por Pablo
 def registrar_gasto():
@@ -25,7 +25,20 @@ def registrar_gasto():
 
 # Función a completar por María Pía
 def ver_resumen_mensual():
-    print("\n--- Función 'ver_resumen_mensual()' aún no implementada ---")
+    total_ingresos = 0
+    total_gastos = 0
+    saldos = 0
+    print("\n--- Ver_resumen_mensual ---")
+    if not ingresos:
+        print('No hay datos registrados')
+        return
+
+    total_ingresos = sum(item["monto"] for item in ingresos) 
+    total_gastos = sum(item["monto"] for item in gastos)
+    saldos = total_ingresos - total_gastos
+    print(f"El total de ingreso mensual es :{total_ingresos}")
+    print(f"El total de gastos mensual es: {total_gastos}")
+    print(f"\nSu monto de ahorro total es: {saldos}")
 
 # Función a completar por Luis
 def eliminar_ingreso_o_gasto():
