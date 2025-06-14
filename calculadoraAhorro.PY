@@ -17,9 +17,9 @@ def registrar_ingreso():
         return
 
     ingresos.append({"nombre": nombre, "monto": monto})
-    print(f"Ingreso '{nombre}' por ${monto:} registrado correctamente.")
+    print(f"Ingreso '{nombre}' por ${monto} registrado correctamente.")
 
-# Función a completar por Pablo
+# Funcion a completar por Pablo
 def registrar_gasto():
     print("\n---registrar_gasto ---")
     nombre = input("Nombre del gasto: ").strip()
@@ -35,15 +35,28 @@ def registrar_gasto():
         print("Debes ingresar un número válido.")
         return
     gastos.append({"nombre":nombre, "monto":monto})
-    print(f"Gastos '{nombre}' por ${monto:} registrado correctamente.")
+    print(f"Gastos '{nombre}' por ${monto:.2f} registrado correctamente.")
 
-# Función a completar por María Pía
+# Funcion a completar por Maria Pia
 def ver_resumen_mensual():
-    print("\n--- Función 'ver_resumen_mensual()' aún no implementada ---")
+    total_ingresos = 0
+    total_gastos = 0
+    saldos = 0
+    print("\n--- Ver_resumen_mensual ---")
+    if not ingresos and not gastos:
+        print("No hay datos registrados")
+        return
 
-# Función a completar por Luis
+    total_ingresos = sum(item["monto"] for item in ingresos) 
+    total_gastos = sum(item["monto"] for item in gastos)
+    saldos = total_ingresos - total_gastos
+    print(f"El total de ingreso mensual es :{total_ingresos}")
+    print(f"El total de gastos mensual es: {total_gastos}")
+    print(f"\nSu monto de ahorro total es: {saldos}")
+
+# Funcion a completar por Luis
 def eliminar_ingreso_o_gasto():
-    print("\n--- Función 'eliminar_ingreso_o_gasto()' aún no implementada ---")
+    print("\n--- Funcion 'eliminar_ingreso_o_gasto()' aon no implementada ---")
 
 
 def menu():
