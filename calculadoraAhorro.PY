@@ -21,7 +21,21 @@ def registrar_ingreso():
 
 # Función a completar por Pablo
 def registrar_gasto():
-    print("\n--- Función 'registrar_gasto()' aún no implementada ---")
+    print("\n---registrar_gasto ---")
+    nombre = input("Nombre del gasto: ").strip()
+    if nombre == "":
+        print("El nombre no puede estar vacío.")
+        return
+    try:
+        monto = float(input("Monto del gasto: "))
+        if monto <= 0:
+            print("El monto debe ser mayor que cero.")
+            return
+    except ValueError:
+        print("Debes ingresar un número válido.")
+        return
+    gastos.append({"nombre":nombre, "monto":monto})
+    print(f"Gastos '{nombre}' por ${monto:.2f} registrado correctamente.")
 
 # Función a completar por María Pía
 def ver_resumen_mensual():
