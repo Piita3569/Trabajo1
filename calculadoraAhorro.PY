@@ -54,9 +54,28 @@ def ver_resumen_mensual():
     print(f"El total de gastos mensual es: {total_gastos}")
     print(f"\nSu monto de ahorro total es: {saldos}")
 
-# Funcion a completar por Luis
 def eliminar_ingreso_o_gasto():
-    print("\n--- Funcion 'eliminar_ingreso_o_gasto()' aon no implementada ---")
+    tipo = input("Eliminar ingreso (i) o gasto (g): ").lower()
+    if tipo == "i":
+        for i, ingreso in enumerate(ingresos, 1):
+            print(f"{i}. {ingreso['nombre']} - ${ingreso['monto']}")
+        num = int(input("Número a eliminar: "))
+        if num> len(ingreso):
+            print(f"El numero del registro no existe, existen registrados: {len(ingreso)}")
+        else:
+            ingresos.pop(num - 1)
+            print("Ingreso eliminado.")
+    elif tipo == "g":
+        for i, gasto in enumerate(gastos, 1):
+            print(f"{i}. {gasto['nombre']} - ${gasto['monto']}")
+        num = int(input("Número a eliminar: "))
+        if num> len(gasto):
+            print(f"El numero del registro no existe, existen registrados: {len(gasto)}")
+        else:
+            gastos.pop(num - 1)
+            print("Gasto eliminado.")
+    else:
+        print("Opción inválida.")
 
 
 def menu():
