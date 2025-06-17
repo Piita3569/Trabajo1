@@ -19,7 +19,6 @@ def registrar_ingreso():
     ingresos.append({"nombre": nombre, "monto": monto})
     print(f"Ingreso '{nombre}' por ${monto} registrado correctamente.")
 
-# Funcion a completar por Pablo
 def registrar_gasto():
     print("\n---registrar_gasto ---")
     nombre = input("Nombre del gasto: ").strip()
@@ -37,7 +36,6 @@ def registrar_gasto():
     gastos.append({"nombre":nombre, "monto":monto})
     print(f"Gastos '{nombre}' por ${monto:.2f} registrado correctamente.")
 
-# Funcion a completar por Maria Pia
 def ver_resumen_mensual():
     total_ingresos = 0
     total_gastos = 0
